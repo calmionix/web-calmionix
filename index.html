@@ -112,7 +112,8 @@ pointer-events:auto;   /* TAMBAH INI */
 
 .hero{
 position:relative;
-height:100vh;
+min-height:100vh;
+eight:auto;
 display:flex;
 justify-content:center;
 align-items:center;
@@ -173,7 +174,8 @@ z-index:2;
 }
 
 .hero-content img.logo{
-  width:850px;
+  width:100%;
+  max-width:850px;
   margin-bottom:25px;
   animation:floating 4s ease-in-out infinite;
   transition:0.4s;
@@ -722,7 +724,7 @@ transform:translateY(-3px);
 /* ================= POPUP RANK ================= */
 
 .popup {
-  solation: isolate;
+  isolation: isolate;
   position: fixed;
   top: 0;
   left: 0;
@@ -981,9 +983,17 @@ grid-template-columns:1fr;
 }
 
 /* ADMIN */
-.admin-card{
-min-width:140px;
-max-width:140px;
+@media (max-width:768px){
+
+  .admin-grid{
+    justify-content:center;
+  }
+
+  .admin-card{
+    min-width:45%;
+    max-width:45%;
+  }
+
 }
 
 /* GALLERY */
@@ -1440,7 +1450,14 @@ gsap.to("#parallax", {
 /* ================= GALLERY SLIDE ================= */
 const galleryTrack = document.getElementById("galleryTrack");
 let pos = 0;
-const itemWidth = 320;
+let itemWidth;
+
+function updateWidth(){
+  itemWidth = document.querySelector(".gallery-item").offsetWidth + 20;
+}
+
+updateWidth();
+window.addEventListener("resize", updateWidth);
 const totalItems = galleryTrack.children.length;
 const visibleItems = 3;
 const maxScroll = -(itemWidth * (totalItems - visibleItems));
