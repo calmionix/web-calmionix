@@ -102,9 +102,12 @@ opacity:1;
 pointer-events:auto;
 }
 
-.overlay,
-.animation-layer {
+.overlay {
     pointer-events: none;
+}
+
+.overlay.active {
+    pointer-events: auto;
 }
 
 /* ================= HERO ================= */
@@ -814,6 +817,11 @@ background:#0099cc;
     z-index: 10;
 }
 
+.rate-card {
+    position: relative;
+    z-index: 5;
+}
+
 /* ================= FLOAT BUTTONS ================= */
 
 .floating-wa{
@@ -1501,7 +1509,7 @@ Beberapa Server yang telah mempercayakan Calmionix.
 <div>60K - 1x Revisi Ringan</div>
 <div>80K - 2x Revisi</div>
 </div>
-<button onclick="waRate('TikTok')" class="buy-btn">Pesan</button>
+<button onclick="openRatePopup('TikTok')" class="buy-btn">Pesan</button>
 </div>
 
 <div class="rate-card premium">
@@ -1509,7 +1517,7 @@ Beberapa Server yang telah mempercayakan Calmionix.
 <div class="rate-list">
 <div>30K - 1x Revisi</div>
 </div>
-<button onclick="waRate('YouTube Short')" class="buy-btn">Pesan</button>
+<button onclick="openRatePopup('YouTube Short')" class="buy-btn">Pesan</button>
 </div>
 
 <div class="rate-card premium">
@@ -1518,7 +1526,7 @@ Beberapa Server yang telah mempercayakan Calmionix.
 <div>40K - Tanpa Revisi</div>
 <div>55K - 1x Revisi</div>
 </div>
-<button onclick="waRate('Konten Only')" class="buy-btn">Pesan</button>
+<button onclick="openRatePopup('Konten Only')" class="buy-btn">Pesan</button>
 </div>
 
 <div class="rate-card premium">
@@ -1527,7 +1535,7 @@ Beberapa Server yang telah mempercayakan Calmionix.
 <div>25K - 2x Upload</div>
 <div>15K - 1x Upload</div>
 </div>
-<button onclick="waRate('Saluran WA')" class="buy-btn">Pesan</button>
+<button onclick="openRatePopup('Saluran WA')" class="buy-btn">Pesan</button>
 </div>
 </div>
 </section>
